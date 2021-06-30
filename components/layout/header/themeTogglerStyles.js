@@ -11,7 +11,7 @@ export const ThemeToggler = styled.div`
     background: #232320;
 
     @media (max-width: 37.5em) {
-      height: 2.8rem;
+      height: 3rem;
       width: 6.8rem;
     }
 
@@ -47,7 +47,7 @@ export const ThemeToggler = styled.div`
           height: 2.1rem;
           width: 2.1rem;
           left: 0.7rem;
-          bottom: 0.3rem;
+          bottom: 0.4rem;
         }
       }
       &:after {
@@ -68,8 +68,8 @@ export const ThemeToggler = styled.div`
 
         @media (max-width: 37.5em) {
           font-size: 2.4rem;
-          right: 0.2rem;
-          bottom: -0.2rem;
+          right: 0.5rem;
+          top: 0.2rem;
         }
       }
     }
@@ -85,12 +85,12 @@ export const ThemeToggler = styled.div`
       content: '☀';
       transform: translateX(-4.1rem);
       font-size: 3.4rem;
-      bottom: 0.1rem;
+      bottom: 0.2rem;
 
       @media (max-width: 37.5em) {
         transform: translateX(-3.4rem);
         font-size: 2.3rem;
-        bottom: -0.2rem;
+        top: 0.2rem;
       }
     }
     & input:checked + .slider {
