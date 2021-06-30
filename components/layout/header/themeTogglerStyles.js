@@ -10,10 +10,10 @@ export const ThemeToggler = styled.div`
     transition: all 500ms ease-in-out;
     background: #232320;
 
-    /* @media (max-width: 37.5em) {
-      height: 3rem;
-      width: 6.5rem;
-    } */
+    @media (max-width: 37.5em) {
+      height: 2.8rem;
+      width: 6.8rem;
+    }
 
     & input {
       opacity: 0;
@@ -42,6 +42,13 @@ export const ThemeToggler = styled.div`
         background-color: #fff;
         border-radius: 50%;
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        @media (max-width: 37.5em) {
+          height: 2.1rem;
+          width: 2.1rem;
+          left: 0.7rem;
+          bottom: 0.3rem;
+        }
       }
       &:after {
         position: absolute;
@@ -56,19 +63,35 @@ export const ThemeToggler = styled.div`
         align-content: center;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
+        /* overflow: hidden; */
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        @media (max-width: 37.5em) {
+          font-size: 2.4rem;
+          right: 0.2rem;
+          bottom: -0.2rem;
+        }
       }
     }
 
     & input:checked + .slider:before {
       transform: translateX(3.8rem);
+
+      @media (max-width: 37.5em) {
+        transform: translateX(3.3rem);
+      }
     }
     & input:checked + .slider:after {
       content: '☀';
       transform: translateX(-4.1rem);
       font-size: 3.4rem;
       bottom: 0.1rem;
+
+      @media (max-width: 37.5em) {
+        transform: translateX(-3.4rem);
+        font-size: 2.3rem;
+        bottom: -0.2rem;
+      }
     }
     & input:checked + .slider {
       background: #f36d18;
