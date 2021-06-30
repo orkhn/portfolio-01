@@ -88,7 +88,7 @@ export const ThemeToggler = styled.div`
       bottom: 0.2rem;
 
       @media (max-width: 37.5em) {
-        transform: translateX(-3.4rem);
+        transform: translateX(-3.2rem);
         font-size: 2.3rem;
         top: 0.2rem;
       }
