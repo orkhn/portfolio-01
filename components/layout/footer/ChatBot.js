@@ -51,7 +51,11 @@ export default function ChatBot({ setChatBotState, chatBotState }) {
           <div className="agent mw-93" ref={contentRef}>
             <p>📧 Here is my number:</p>
 
-            <p>+994(55) 689 79 18</p>
+            <p>
+              <a style={{ wordSpacing: '-10px' }} href="tel:+994(55)6897918">
+                +994(55) 689-7-918
+              </a>
+            </p>
           </div>
           <div className="agent">Can I help you with anything else?</div>
         </Delayed>
