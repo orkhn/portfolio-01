@@ -1,0 +1,15 @@
+/*FONT FOR Headings*/
+@font-face {
+  font-family: 'Cormorant';
+  src: url(/fonts/Cormorant.woff) format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*FONT FOR PARAGRAPHS*/
+@font-face {
+  font-family: 'DejaVuSansMono';
+  src: url(/fonts/DejaVuSansMono.woff) format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
