@@ -34,7 +34,7 @@ export const ChatButton = styled.button`
   @media (max-width:37.5em) {
     width: 3.5rem;
     height: 3.5rem;
-    bottom: 4.2rem;
+    bottom: 2.5rem;
     right: 4.2rem;
     z-index: 5;
 

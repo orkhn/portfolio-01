@@ -12,7 +12,7 @@ export const Navbar = styled.nav`
   background-color: #232320;
   border-radius: 2rem;
 
-  bottom: 3rem;
+  bottom: 1.3rem;
   left: 50%;
   transform: translate(-50%);
 
