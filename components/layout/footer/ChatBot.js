@@ -50,9 +50,8 @@ export default function ChatBot({ setChatBotState, chatBotState }) {
         <Delayed>
           <div className="agent mw-93" ref={contentRef}>
             <p>📧 Here is my number:</p>
-            <br />
+
             <p>+994(55) 689 79 18</p>
-            <br />
           </div>
           <div className="agent">Can I help you with anything else?</div>
         </Delayed>
@@ -124,6 +123,11 @@ export default function ChatBot({ setChatBotState, chatBotState }) {
   };
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
+  const onCloseBtnClick = () => {
+    setChatBotState('close');
+    setCurrentQuestion(0);
+  };
+
   return (
     <OutsideClickHandler
       onOutsideClick={() => {
@@ -143,6 +147,9 @@ export default function ChatBot({ setChatBotState, chatBotState }) {
           <div className="desc">
             <span className="name">Orkhn Bot</span>
           </div>
+          <button className="close-btn" onClick={onCloseBtnClick}>
+            <styled.CloseIcon />
+          </button>
         </styled.ChatHeader>
 
         <styled.ChatContent>

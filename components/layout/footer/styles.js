@@ -18,12 +18,13 @@ export const ChatBot = styled.div`
   transform: translate3d(0, 3rem, 0);
   transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  @media (max-width: 36.5em) {
+  @media (max-width: 27.5em) {
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
   }
+
   ${({ chatBotState }) =>
     chatBotState === 'open' &&
     css`
@@ -86,6 +87,7 @@ export const ChatBot = styled.div`
 `;
 
 export const ChatHeader = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,8 +98,9 @@ export const ChatHeader = styled.div`
   top: 0;
   width: 100%;
   height: 24%;
-  border-radius: 30px 30px 0 0;
+  border-radius: 25px 25px 0 0;
   z-index: 11;
+
   @media (max-width: 27.5em) {
     border-radius: 0;
   }
@@ -110,6 +113,26 @@ export const ChatHeader = styled.div`
     margin-top: 1.2rem;
     color: #fff;
     display: block;
+  }
+
+  .close-btn {
+    background: #222;
+    border: 0;
+    padding: 1rem 1.5rem;
+    transition: all 0.2s ease-in-out;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    :active,
+    :hover {
+      background: #363636;
+    }
   }
 `;
 
@@ -124,6 +147,7 @@ export const ChatContent = styled.div`
 
   @media (max-width: 27.5em) {
     height: 90%;
+    top: 22rem;
   }
 `;
 
@@ -137,6 +161,7 @@ export const ChatAnswer = styled(motion.div)`
 
 export const ChatQuestion = styled(motion.div)`
   margin-top: 1rem;
+  text-align: end;
   .question-btn {
     background: #fff6eb;
     color: #462905;
@@ -223,3 +248,22 @@ export const TypingBubble = styled.div`
     }
   }
 `;
+
+export const CloseIcon = () => {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M7.41425 6.00025L11.7072 1.70725C12.0982 1.31625 12.0982 0.68425 11.7072 0.29325C11.3162 -0.09775 10.6843 -0.09775 10.2933 0.29325L6.00025 4.58625L1.70725 0.29325C1.31625 -0.09775 0.68425 -0.09775 0.29325 0.29325C-0.09775 0.68425 -0.09775 1.31625 0.29325 1.70725L4.58625 6.00025L0.29325 10.2933C-0.09775 10.6843 -0.09775 11.3162 0.29325 11.7072C0.48825 11.9022 0.74425 12.0002 1.00025 12.0002C1.25625 12.0002 1.51225 11.9022 1.70725 11.7072L6.00025 7.41425L10.2933 11.7072C10.4883 11.9022 10.7442 12.0002 11.0002 12.0002C11.2562 12.0002 11.5122 11.9022 11.7072 11.7072C12.0982 11.3162 12.0982 10.6843 11.7072 10.2933L7.41425 6.00025Z"
+        fill="white"
+      ></path>
+    </svg>
+  );
+};
