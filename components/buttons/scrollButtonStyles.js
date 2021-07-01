@@ -20,14 +20,12 @@ export const ScrollBtn = styled.span`
     text-align: center;
     display: inline-block;
     transform: rotate(270deg);
-
     @media (max-width: 37.5em) {
       display: none;
       visibility: hidden;
       opacity: 0;
     }
   }
-
   @keyframes fadeInUp {
     from {
       opacity: 0;

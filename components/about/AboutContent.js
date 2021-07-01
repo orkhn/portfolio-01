@@ -120,7 +120,6 @@ export default function AboutContent() {
           </styled.Connection>
         </styled.Content>
       </styled.Intro>
-      <ScrollButton />
       <styled.Passion>
         <styled.Indicator>
           <span>02</span>
@@ -161,7 +160,7 @@ export default function AboutContent() {
               }}
             >
               <h3>Technology</h3>
-              <p className>
+              <p>
                 Technology has the power to change the lives of the world and
                 individuals. I want to be a person who can always catch up with
                 the latest technology and respond to changes. I think it is the

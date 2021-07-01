@@ -16,6 +16,10 @@ export const Intro = styled.div`
   grid-template-columns: repeat(6, minmax(auto, 1fr));
   height: 95vh;
 
+  h2 {
+    font-weight: 900;
+  }
+
   @media (max-width: 37.5em) {
     display: flex;
     flex-direction: column;
@@ -51,7 +55,7 @@ export const Passion = styled(Intro)`
     margin-bottom: -1rem;
     text-align: center;
     font-size: 2.6rem;
-    font-weight: bold;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
     color: ${({ theme }) => theme.secondary};
