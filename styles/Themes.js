@@ -15,6 +15,7 @@ export const lightTheme = {
   projectText: '#fefaf6',
   progressbarColor: '#fff',
   boxShadow: '0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)',
+  bottomNavbarColor: '#f7faf2',
 };
 
 export const darkTheme = {
@@ -32,6 +33,6 @@ export const darkTheme = {
   aboutResume: '#64ffda',
   projectText: '#64ffda',
   progressbarColor: '#64ffda',
-
   boxShadow: 'none',
+  bottomNavbarColor: '#64ffda',
 };

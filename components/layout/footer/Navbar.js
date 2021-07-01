@@ -20,10 +20,10 @@ const Navbar = () => {
     const toggleVisible = () => {
       const scrolled = document.documentElement.scrollTop;
       console.log(document.documentElement.scrollTop);
-      if (scrolled !== 0) {
+      if (scrolled > 30) {
         setVisible(false);
       }
-      if (scrolled === 0) {
+      if (scrolled <= 0) {
         setVisible(true);
       }
     };

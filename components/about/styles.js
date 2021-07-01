@@ -28,7 +28,6 @@ export const Intro = styled.div`
 
     img {
       width: 65%;
-      /* margin-top: -1rem; */
     }
   }
 `;
