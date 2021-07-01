@@ -7,7 +7,7 @@ const ScrollButton = () => {
 
   const scrollToBottom = () => {
     window.scrollTo({
-      top: 1080,
+      top: 1070,
       behavior: 'smooth',
     });
   };

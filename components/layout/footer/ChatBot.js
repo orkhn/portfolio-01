@@ -52,7 +52,10 @@ export default function ChatBot({ setChatBotState, chatBotState }) {
             <p>📧 Here is my number:</p>
 
             <p>
-              <a style={{ wordSpacing: '-10px' }} href="tel:+994(55)6897918">
+              <a
+                style={{ wordSpacing: '-10px', color: 'blue' }}
+                href="tel:+994(55)6897918"
+              >
                 +994(55) 689-7-918
               </a>
             </p>

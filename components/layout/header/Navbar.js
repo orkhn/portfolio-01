@@ -13,8 +13,8 @@ const Navbar = ({ themeToggler, theme, setChatBotState }) => {
   const { width } = useViewport();
 
   const projectUrl = () => {
-    if (isHome && width < 900) return '/project';
-    else if (width > 900 && isHome) return '#';
+    if (isHome) return '/project';
+    else if (isHome) return '#';
     else return '/';
   };
 
@@ -25,7 +25,7 @@ const Navbar = ({ themeToggler, theme, setChatBotState }) => {
           onClick={() => console.log('clicked')}
           className="project"
         >
-          <styled.NavLink href={projectUrl()} rotate="-2deg" className="about">
+          <styled.NavLink href={projectUrl()} className="about">
             <span>{isHome ? 'Projects' : 'Home'}</span>
           </styled.NavLink>
         </styled.LinkWrapper>

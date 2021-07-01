@@ -14,8 +14,8 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     scroll-behavior:smooth;
 
-    @media only screen and (min-width: 112.5em) {
-    font-size: 82.5%;
+    @media only screen and (min-width: 75em) {
+    font-size: 80.5%;
     } 
   }
 
@@ -24,6 +24,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'DejaVuSansMono' ,Helvetica, Arial, sans-serif;;
     transition: all .5s linear;
   }
+
 
   img {
   width: 100%;

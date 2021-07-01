@@ -8,7 +8,7 @@ const ProgressBar = ({ valueStart, valueEnd, pathColor, title }) => {
     <AnimatedProgressProvider
       valueStart={valueStart}
       valueEnd={valueEnd}
-      duration={2}
+      duration={3}
       easingFunction={easeQuadInOut}
       title={title}
     >
@@ -20,11 +20,7 @@ const ProgressBar = ({ valueStart, valueEnd, pathColor, title }) => {
             text={`${roundedValue}%`}
             styles={{
               // Customize the root svg element
-              root: {
-                viewBox: '0 0 50 50',
-                width: '145',
-                height: '145',
-              },
+              root: {},
 
               // Customize the path
               path: {
@@ -58,7 +54,7 @@ const ProgressBar = ({ valueStart, valueEnd, pathColor, title }) => {
                 fill: '#232320',
 
                 // Text size
-                fontSize: '24px',
+                fontSize: '22px',
               },
             }}
           />

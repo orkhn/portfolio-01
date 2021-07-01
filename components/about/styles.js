@@ -6,24 +6,41 @@ export const About = styled.section`
   margin-top: 14rem;
   animation: fadeInUp 0.7s ease-in-out;
 
-  @media (max-width: 56.25em) {
-    height: 60vh;
-    width: 80%;
+  @media (max-width: 37.5em) {
+    width: 100%;
   }
 `;
 
 export const Intro = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, minmax(240px, 1fr));
-  height: 100vh;
+  grid-template-columns: repeat(6, minmax(auto, 1fr));
+  height: 95vh;
+
+  @media (max-width: 37.5em) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: -6.8rem;
+
+    img {
+      width: 65%;
+      /* margin-top: -1rem; */
+    }
+  }
 `;
 
 export const Passion = styled(Intro)`
+  padding-top: 3rem;
+
   li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    p {
+      padding-bottom: 5.5rem;
+    }
   }
 
   h2 {
@@ -31,55 +48,67 @@ export const Passion = styled(Intro)`
   }
 
   h3 {
-    margin-top: 0.7rem;
     margin-bottom: -1rem;
     text-align: center;
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
     color: ${({ theme }) => theme.secondary};
   }
 
-  img {
-    width: 50rem;
+  @media (max-width: 37.5em) {
+    h2 {
+      margin: -3rem 0 0 0;
+    }
+    h3 {
+      margin: -6rem 0 0.2rem 0;
+    }
+
+    p {
+      margin-bottom: 1.6rem;
+    }
   }
 `;
 
 export const Skills = styled(Intro)`
+  height: 85vh;
   h2 {
     margin-bottom: 8rem;
-  }
-  img {
-    width: 50rem;
   }
 
   .skill-area {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 
   [class^='block-'] {
     display: flex;
     flex-direction: row;
-    gap: 2;
+    justify-content: center;
+  }
+
+  @media (max-width: 37.5em) {
+    margin: 24rem 0 0 0;
+    height: 100vh;
+
+    .skill-area {
+      padding-bottom: 10rem;
+    }
   }
 `;
 
 export const Frame = styled.div`
   display: flex;
   flex-direction: column;
-  width: 33.3%;
-  height: 17rem;
-  padding: 1rem 1rem 2rem 1rem;
-  flex-grow: 1; // 1+1+1 =3 => 1/3 X 100% => 33.33% each
-
-  flex-basis: (100%)/3; // 33.33% each
+  width: 28%;
+  height: 92%;
+  padding: 0.3rem 1rem 1rem 1rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border-radius: 10px;
-  background-color: #fff;
-  margin: 0.5rem;
+  background-color: ${({ theme }) => theme.progressbarColor};
 
   .heading {
     display: flex;
@@ -90,41 +119,46 @@ export const Frame = styled.div`
 
     img {
       padding-right: 0;
-      width: 4rem;
-      height: 4rem;
+      width: 3rem;
+      height: 3rem;
     }
   }
   .circle {
-    height: 65%;
+    height: 62%;
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    span {
+      position: absolute;
+      top: 65%;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 37.5em) {
+    height: 20rem;
+    margin: 1rem;
+    padding: 0.3rem 0.5rem 0.5rem 0.5rem;
+  }
+  @media (max-width: 28em) {
+    height: 13.5rem;
+    margin: 0.5rem;
   }
 `;
-
-export const Title = styled.h2`
-  text-align: center;
-  word-spacing: 0.4rem;
-  font-size: 3.4rem;
-  margin-top: 0.8rem;
-  padding-right: 16rem;
-  color: ${({ theme }) => theme.secondary};
-  text-transform: uppercase;
-
-  &.titleNoAligned {
-    text-align: start;
-  }
-`;
-
-export const Img = styled(motion.div)``;
 
 export const Indicator = styled(motion.div)`
   position: relative;
 
+  @media (max-width: 37.5em) {
+    width: 30%;
+  }
+
   span {
     color: #ff4d5a;
-    font-size: 3.4rem;
+    font-size: clamp(2.2rem, 4.8vw, 2.6rem);
     padding-left: 6.2rem;
 
     ::before {
@@ -136,14 +170,57 @@ export const Indicator = styled(motion.div)`
       top: 2rem;
       left: 0;
     }
+
+    @media (max-width: 37.5em) {
+      padding-left: 3.3rem;
+
+      ::before {
+        top: 50%;
+        width: 3rem;
+      }
+    }
   }
 `;
 
 export const Illustration = styled(motion.div)`
   grid-column: 2 / span 2;
+
+  @media (max-width: 37.5em) {
+    margin-bottom: 4rem;
+  }
 `;
 
-export const Content = styled.div`
+export const Title = styled.h2`
+  text-align: center;
+  word-spacing: 0.4rem;
+  padding-right: 6rem;
+  font-size: clamp(2.3rem, 4.8vw, 4rem);
+
+  color: ${({ theme }) => theme.secondary};
+  text-transform: uppercase;
+
+  &.titleNoAligned {
+    text-align: center;
+    padding: 2rem 0 0 0;
+  }
+
+  @media (max-width: 37.5em) {
+    width: 100%;
+    padding: 0 0 1rem 0;
+    margin-top: -3rem;
+    text-align: center;
+  }
+`;
+
+export const Img = styled(motion.div)`
+  @media (max-width: 37.5em) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const Content = styled(motion.div)`
   grid-column: 4 / span 2;
   padding-left: 3rem;
 
@@ -155,12 +232,34 @@ export const Content = styled.div`
 
     color: ${({ theme }) => theme.secondary};
   }
+
+  @media (max-width: 37.5em) {
+    padding: 0 0.6rem;
+
+    p {
+      padding: 0.7rem;
+      font-size: 1.3rem;
+      word-spacing: -0.2rem;
+    }
+  }
 `;
+
+export const ListItem = styled(motion.li)``;
 
 export const Connection = styled(motion.div)`
   .buttons {
     display: flex;
     gap: 2rem;
+
+    @media (max-width: 37.5em) {
+      justify-content: center;
+      gap: 1;
+      margin-top: -1rem;
+
+      div {
+        margin: 0;
+      }
+    }
   }
 `;
 
@@ -182,7 +281,6 @@ export const Button = styled(motion.div)`
     color: currentColor;
     transition: all 0.2s ease-in-out;
     padding: 1rem 1.8rem;
-    /* border-bottom: 1px solid ${({ theme }) => theme.secondary}; */
     font-size: 1.1rem;
     text-transform: uppercase;
     font-weight: bold;

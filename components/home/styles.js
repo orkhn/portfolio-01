@@ -27,7 +27,7 @@ export const Hero = styled.section`
 
   @media (min-width: 37.51em) and (max-width: 56.25em) {
     display: block;
-    margin-top: -4rem;
+    margin-top: -1rem;
   }
 
   @media (min-width: 56.26em) and (max-width: 75em) {
@@ -35,7 +35,7 @@ export const Hero = styled.section`
   }
 
   @media (min-width: 75.01em) and (max-width: 112.5em) {
-    margin-top: -4rem;
+    margin-top: -5rem;
   }
 `;
 

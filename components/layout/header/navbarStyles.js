@@ -15,14 +15,14 @@ export const Navbar = styled.nav`
     `}
 
   @media (max-width: 37.5em) {
+    padding-top: 1.5rem;
+
     .about,
     .project,
     .contact {
       display: none;
       visibility: hidden;
     }
-
-    padding-top: 1.5rem;
   }
 `;
 
@@ -89,6 +89,11 @@ export const Logo = styled.img`
   height: 4rem;
 
   animation: spin 15s linear infinite;
+
+  @media (min-width: 37.51em) and (max-width: 42.5em) {
+    opacity: 0;
+    visibility: hidden;
+  }
 
   @keyframes spin {
     0% {

@@ -7,10 +7,6 @@ export const ScrollBtn = styled.span`
   animation: fadeInUp 1.2s ease infinite;
   cursor: pointer;
 
-  @media (max-width: 56.25em) {
-    bottom: 4.3rem;
-    pointer-events: none;
-  }
   ::before {
     color: ${({ theme }) => theme.secondary};
     content: '«';
@@ -25,8 +21,10 @@ export const ScrollBtn = styled.span`
     display: inline-block;
     transform: rotate(270deg);
 
-    @media (max-width: 34.375em) {
-      font-size: 1rem;
+    @media (max-width: 37.5em) {
+      display: none;
+      visibility: hidden;
+      opacity: 0;
     }
   }
 

@@ -45,7 +45,6 @@ export default function AboutContent() {
 
   return (
     <styled.About>
-      <ScrollButton />
       <styled.Intro>
         <styled.Indicator>
           <span>01</span>
@@ -57,14 +56,13 @@ export default function AboutContent() {
             ref={ref}
             animate={controls}
             initial="hidden"
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.2 }}
             variants={{
-              visible: { opacity: 1, y: -50 },
-              hidden: { opacity: 0, y: 0 },
+              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, y: 50 },
             }}
           >
             <img
-              style={{ padding: '5rem 0 0' }}
               src={`${
                 theme === 'light'
                   ? '/images/illustrations/whoIam.svg'
@@ -89,10 +87,6 @@ export default function AboutContent() {
             required technologies.
           </p>
           <styled.Connection>
-            <p>
-              I'm always open to job opportunities and new connections. Send me
-              an email, have a look at my resume.
-            </p>
             <div className="buttons">
               <styled.Button
                 animate={controls}
@@ -125,9 +119,8 @@ export default function AboutContent() {
             </div>
           </styled.Connection>
         </styled.Content>
-        <ScrollButton />
       </styled.Intro>
-
+      <ScrollButton />
       <styled.Passion>
         <styled.Indicator>
           <span>02</span>
@@ -138,7 +131,7 @@ export default function AboutContent() {
             ref={inViewRef2}
             animate={controls}
             initial="hidden"
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.2 }}
             variants={{
               visible2: { opacity: 1, y: -50 },
               hidden: { opacity: 0, y: 0 },
@@ -156,26 +149,35 @@ export default function AboutContent() {
             />
           </styled.Img>
         </styled.Illustration>
-        <styled.Content
-          animate={controls}
-          initial="hidden"
-          transition={{ duration: 0.5, delay: 0.3 }}
-          variants={{
-            visible: { opacity: 1, y: -50 },
-            hidden: { opacity: 0, y: 0 },
-          }}
-        >
+        <styled.Content>
           <ul>
-            <li>
+            <styled.ListItem
+              animate={controls}
+              initial="hidden"
+              transition={{ duration: 1.3 }}
+              variants={{
+                visible2: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: 80 },
+              }}
+            >
               <h3>Technology</h3>
-              <p>
+              <p className>
                 Technology has the power to change the lives of the world and
                 individuals. I want to be a person who can always catch up with
                 the latest technology and respond to changes. I think it is the
                 mission of designers as well as engineers to promote innovation.
               </p>
-            </li>
-            <li>
+            </styled.ListItem>
+
+            <styled.ListItem
+              animate={controls}
+              initial="hidden"
+              transition={{ duration: 1.6 }}
+              variants={{
+                visible2: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: 80 },
+              }}
+            >
               <h3>Story</h3>
               <p>
                 I love story-like content such as novels, movies. Stories can
@@ -183,8 +185,17 @@ export default function AboutContent() {
                 remember. I believe that if you can study every story pattern
                 and give your output a story, you will get a big return.
               </p>
-            </li>
-            <li>
+            </styled.ListItem>
+
+            <styled.ListItem
+              animate={controls}
+              initial="hidden"
+              transition={{ duration: 1.9 }}
+              variants={{
+                visible2: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: 80 },
+              }}
+            >
               <h3>Design</h3>
               <p>
                 I think design is like a "magic wand". If a service or product
@@ -192,7 +203,7 @@ export default function AboutContent() {
                 an intermediary for users to master it. I strive every day to
                 create a "magic wand" that matches the user.
               </p>
-            </li>
+            </styled.ListItem>
           </ul>
         </styled.Content>
       </styled.Passion>
@@ -206,7 +217,7 @@ export default function AboutContent() {
             ref={inViewRef3}
             animate={controls}
             initial="hidden"
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.2 }}
             variants={{
               visible: { opacity: 1, y: -50 },
               hidden: { opacity: 0, y: 0 },
@@ -223,16 +234,7 @@ export default function AboutContent() {
             />
           </styled.Img>
         </styled.Illustration>
-        <styled.Content
-          className="skill-area"
-          animate={controls}
-          initial="hidden"
-          transition={{ duration: 0.5, delay: 0.3 }}
-          variants={{
-            visible3: { opacity: 1, y: -50 },
-            hidden: { opacity: 0, y: 0 },
-          }}
-        >
+        <styled.Content className="skill-area">
           <div className="block-1">
             <styled.Frame>
               <div className="heading">
@@ -243,8 +245,8 @@ export default function AboutContent() {
                   valueStart={0}
                   valueEnd={90}
                   pathColor={`21, 114, 182`}
-                  title={'HTML&CSS'}
                 ></ProgressBar>
+                <span>HTML&CSS</span>
               </div>
             </styled.Frame>
             <styled.Frame>
@@ -257,6 +259,7 @@ export default function AboutContent() {
                   valueEnd={80}
                   pathColor={`247, 223, 30`}
                 ></ProgressBar>
+                <span>Javascript</span>
               </div>
             </styled.Frame>
             <styled.Frame>
@@ -269,6 +272,7 @@ export default function AboutContent() {
                   valueEnd={85}
                   pathColor={`000,000,000`}
                 ></ProgressBar>
+                <span>GIT</span>
               </div>
             </styled.Frame>
           </div>
@@ -283,6 +287,7 @@ export default function AboutContent() {
                   valueEnd={85}
                   pathColor={`68, 168, 179`}
                 ></ProgressBar>
+                <span>Tailwind</span>
               </div>
             </styled.Frame>
             <styled.Frame>
@@ -295,6 +300,7 @@ export default function AboutContent() {
                   valueEnd={65}
                   pathColor={`0, 216, 255`}
                 ></ProgressBar>
+                <span>React</span>
               </div>
             </styled.Frame>
             <styled.Frame>
@@ -307,6 +313,7 @@ export default function AboutContent() {
                   valueEnd={85}
                   pathColor={`162, 89, 255`}
                 ></ProgressBar>
+                <span>Figma</span>
               </div>
             </styled.Frame>
           </div>
@@ -321,6 +328,7 @@ export default function AboutContent() {
                   valueEnd={75}
                   pathColor={`205, 103, 253`}
                 ></ProgressBar>
+                <span>SASS</span>
               </div>
             </styled.Frame>
             <styled.Frame>
@@ -333,6 +341,7 @@ export default function AboutContent() {
                   valueEnd={70}
                   pathColor={`000, 000, 000`}
                 ></ProgressBar>
+                <span>NextJs</span>
               </div>
             </styled.Frame>
             <styled.Frame>
@@ -348,11 +357,57 @@ export default function AboutContent() {
                   valueEnd={80}
                   pathColor={`255, 206, 191`}
                 ></ProgressBar>
+                <span>Styled Co.</span>
+              </div>
+            </styled.Frame>
+          </div>
+          <div className="block-4">
+            <styled.Frame>
+              <div className="heading">
+                <img src="/icons/linux-icon.svg" alt="sass icon" />
+              </div>
+              <div className="circle">
+                <ProgressBar
+                  valueStart={0}
+                  valueEnd={75}
+                  pathColor={`38, 50, 56`}
+                ></ProgressBar>
+                <span>Linux</span>
+              </div>
+            </styled.Frame>
+            <styled.Frame>
+              <div className="heading">
+                <img src="/icons/firebase-icon.svg" alt="nextjs icon" />
+              </div>
+              <div className="circle">
+                <ProgressBar
+                  valueStart={0}
+                  valueEnd={50}
+                  pathColor={`252, 202, 63`}
+                ></ProgressBar>
+                <span>Firebase</span>
+              </div>
+            </styled.Frame>
+            <styled.Frame>
+              <div className="heading">
+                <img
+                  src="/icons/mongodb-icon.svg"
+                  alt="styled-components icon"
+                />
+              </div>
+              <div className="circle">
+                <ProgressBar
+                  valueStart={0}
+                  valueEnd={40}
+                  pathColor={`72, 165, 71`}
+                ></ProgressBar>
+                <span>MongoDB</span>
               </div>
             </styled.Frame>
           </div>
         </styled.Content>
       </styled.Skills>
+      <ScrollButton />
     </styled.About>
   );
 }

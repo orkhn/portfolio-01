@@ -26,7 +26,14 @@ const Layout = ({ children }) => {
             setChatBotState={setChatBotState}
           />
         </header>
-        <main style={{ zIndex: 1, display: 'grid' }}>{children}</main>
+        <main
+          style={{
+            zIndex: 1,
+            display: 'grid',
+          }}
+        >
+          {children}
+        </main>
         <Footer
           theme={theme}
           chatBotState={chatBotState}
