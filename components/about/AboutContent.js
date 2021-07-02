@@ -109,7 +109,7 @@ export default function AboutContent() {
                   hidden: { opacity: 0, y: 20 },
                 }}
               >
-                <a href="https://drive.google.com/file/d/1Uu4f9JYzC9A7hzRTeimdWMy1e47gMa1f/view?usp=sharing">
+                <a href="https://www.github.com/orkhn/">
                   <styled.ResumeIcon />
                   Resume
                 </a>
@@ -228,7 +228,7 @@ export default function AboutContent() {
             />
           </styled.Img>
         </styled.Illustration>
-        <styled.Content className="skill-area">
+        <styled.Content>
           <div className="block-1">
             <styled.Frame>
               <div className="heading">
@@ -266,7 +266,7 @@ export default function AboutContent() {
                     );
                   }}
                 </VisibilitySensor>
-                <span>Javascript</span>
+                <span>JS6</span>
               </div>
             </styled.Frame>
             <styled.Frame>

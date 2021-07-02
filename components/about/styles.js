@@ -13,7 +13,7 @@ export const Intro = styled.div`
   padding-top: 12rem;
   animation: fadeInUp 0.5s ease-in-out;
 
-  @media (max-width: 37.5em) {
+  @media (max-width: 36.5em) {
     display: flex;
     flex-direction: column;
     padding-top: 9rem;
@@ -24,13 +24,24 @@ export const Intro = styled.div`
       margin-bottom: 5rem;
     }
   }
+
+  @media (max-width: 56.25em) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 9rem;
+    height: auto;
+
+    img {
+      width: 40%;
+      margin-bottom: 6.5rem;
+    }
+  }
 `;
 
 export const Passion = styled(Intro)`
-  @media (max-width: 37.5em) {
+  @media (max-width: 56.25em) {
     img {
-      margin-bottom:-3rem;
-    }
+      margin-bottom: -3rem;
     }
   }
 `;
@@ -40,23 +51,15 @@ export const Skills = styled(Intro)`
     margin-bottom: 8rem;
   }
 
-  .skill-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   [class^='block-'] {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
   }
 
   @media (max-width: 37.5em) {
     padding-top: 5rem;
-    .skill-area {
-      padding-bottom: 10rem;
-    }
+    margin: 2rem;
 
     img {
       margin: 0;
@@ -67,7 +70,7 @@ export const Skills = styled(Intro)`
 export const Indicator = styled(motion.div)`
   position: relative;
 
-  @media (max-width: 37.5em) {
+  @media (max-width: 56.25em) {
     width: 30%;
   }
 
@@ -86,7 +89,7 @@ export const Indicator = styled(motion.div)`
       left: 0;
     }
 
-    @media (max-width: 37.5em) {
+    @media (max-width: 56.25em) {
       padding-left: 3.3rem;
 
       ::before {
@@ -99,18 +102,18 @@ export const Indicator = styled(motion.div)`
 
 export const Illustration = styled(motion.div)`
   grid-column: 2 / span 2;
+  padding-right: 3rem;
 `;
 
 export const Title = styled.h2`
   text-align: center;
   word-spacing: 0.4rem;
-  padding-right: 6rem;
-  font-size: clamp(2.3rem, 4.8vw, 4rem);
+  font-size: clamp(2.1rem, 4.8vw, 2.8rem);
 
   color: ${({ theme }) => theme.secondary};
   text-transform: uppercase;
 
-  @media (max-width: 37.5em) {
+  @media (max-width: 56.25em) {
     width: 100%;
     padding: 0 0 1rem 0;
     margin-top: -2.8rem;
@@ -119,7 +122,7 @@ export const Title = styled.h2`
 `;
 
 export const Img = styled(motion.div)`
-  @media (max-width: 37.5em) {
+  @media (max-width: 56.25em) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,8 +131,7 @@ export const Img = styled(motion.div)`
 
 export const Content = styled(motion.div)`
   grid-column: 4 / span 2;
-  padding-left: 3rem;
-
+  padding-left: 4rem;
   p {
     font-size: 1.4rem;
     padding: 2rem 0;
@@ -140,13 +142,16 @@ export const Content = styled(motion.div)`
   }
 
   @media (max-width: 37.5em) {
-    padding: 0 0.6rem;
-
     p {
       padding: 0.7rem;
       font-size: 1.3rem;
       word-spacing: -0.2rem;
     }
+  }
+
+  @media (max-width: 90.5em) {
+    grid-column: 4 / span 3;
+    padding-right: 6rem;
   }
 `;
 
@@ -210,7 +215,7 @@ export const ListItem = styled(motion.li)`
     color: ${({ theme }) => theme.secondary};
   }
 
-  @media (max-width: 37.5em) {
+  @media (max-width: 56.25em) {
     padding-bottom: 1rem;
   }
 `;
@@ -220,7 +225,7 @@ export const Connection = styled(motion.div)`
     display: flex;
     gap: 2rem;
 
-    @media (max-width: 37.5em) {
+    @media (max-width: 56.25em) {
       justify-content: center;
       gap: 1;
       margin-top: -1rem;
@@ -235,49 +240,43 @@ export const Connection = styled(motion.div)`
 export const Frame = styled.div`
   display: flex;
   flex-direction: column;
-  width: 28%;
-  height: 92%;
-  padding: 0.3rem 1rem 1rem 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.skillCard};
+
+  svg {
+    width: 100%;
+  }
 
   .heading {
     display: flex;
     align-items: start;
     justify-content: flex-start;
     width: 100%;
-    height: 30%;
+    height: 25%;
 
     img {
-      padding-right: 0;
       width: 3rem;
       height: 3rem;
     }
   }
   .circle {
-    height: 62%;
     position: relative;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
     span {
       position: absolute;
-      top: 65%;
+      top: 60%;
       font-size: 1rem;
     }
   }
 
-  @media (max-width: 37.5em) {
-    height: 20rem;
-    margin: 1rem;
-    padding: 0.3rem 0.5rem 0.5rem 0.5rem;
-  }
-  @media (max-width: 28em) {
-    height: 13.5rem;
-    margin: 0.5rem;
+  @media (max-width: 112.5em) {
+    padding: 0.5rem;
   }
 `;
 

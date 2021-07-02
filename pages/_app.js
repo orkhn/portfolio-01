@@ -30,7 +30,9 @@ const MyApp = ({ Component, pageProps }) => {
         />
         <link rel="manifest" href="/images/favicons/site.webmanifest" />
         <meta property="og:title" content="Orkhan | A React Developer" />
+
         <meta property="og:description" content="Orkhan's portfolio." />
+        <meta property="og:url" content="https://orkhn.com/" />
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
       </Head>
