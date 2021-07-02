@@ -9,7 +9,7 @@ export const Navbar = styled.nav`
   padding: 1rem 2rem;
   position: fixed;
   transition: opacity 1s;
-  background-color: #232320;
+  background: var(--title-color);
   border-radius: 2rem;
 
   bottom: 1.3rem;

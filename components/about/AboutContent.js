@@ -4,6 +4,7 @@ import { useContext, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useViewport } from 'hooks/useViewport';
 import { useAnimation } from 'framer-motion';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import ProgressBar from '/helpers/progressBar/ProgressBar';
 
@@ -35,24 +36,23 @@ export default function AboutContent() {
       controls.start('visible2');
       controls.start('visible3');
     } else {
-      if (inViewRef) controls.start('visible');
+      if (inView) controls.start('visible');
 
-      if (inViewRef2) controls.start('visible2');
+      if (inView2) controls.start('visible2');
 
-      if (inViewRef3) controls.start('visible3');
+      if (inView3) controls.start('visible3');
     }
   }, [controls, inView, inView2, inView3, width]);
 
   return (
     <styled.About>
-      <styled.Intro>
+      <styled.Intro ref={inViewRef}>
         <styled.Indicator>
           <span>01</span>
         </styled.Indicator>
         <styled.Illustration>
           <styled.Title>who i am</styled.Title>
           <styled.Img
-            ref={inViewRef}
             ref={ref}
             animate={controls}
             initial="hidden"
@@ -73,18 +73,16 @@ export default function AboutContent() {
           </styled.Img>
         </styled.Illustration>
         <styled.Content>
-          <styled.Title className="titleNoAligned">orkhan ahadov</styled.Title>
+          <styled.Title>orkhan ahadov</styled.Title>
           <p>
-            Born in 1996. Graduated from Az. State Economic University in 2017,
-            majoring "Business administration and Management". Following
-            graduation and fulfillment of army duty, I've worked in different
-            positions in various companies.
+            Born in 1996. Graduated from Az. State Economic University in 2017, majoring
+            "Business administration and Management". Following graduation and fulfillment
+            of army duty, I've worked in different positions in various companies.
           </p>
           <p>
-            In 2019, I decided to change completely my career path and become a
-            full stack developer. In this road, with helping of my english &
-            problem-solving skills I've been learning and adapting cutting edge
-            required technologies.
+            In 2019, I decided to change completely my career path and become a full stack
+            developer. In this road, with helping of my english & problem-solving skills
+            I've been learning and adapting cutting edge required technologies.
           </p>
           <styled.Connection>
             <div className="buttons">
@@ -120,14 +118,13 @@ export default function AboutContent() {
           </styled.Connection>
         </styled.Content>
       </styled.Intro>
-      <styled.Passion>
+      <styled.Passion ref={inViewRef2}>
         <styled.Indicator>
           <span>02</span>
         </styled.Indicator>
         <styled.Illustration>
           <styled.Title>My Passions</styled.Title>
           <styled.Img
-            ref={inViewRef2}
             animate={controls}
             initial="hidden"
             transition={{ duration: 1.2 }}
@@ -155,16 +152,16 @@ export default function AboutContent() {
               initial="hidden"
               transition={{ duration: 1.3 }}
               variants={{
-                visible2: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 80 },
+                visible2: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 80 },
               }}
             >
               <h3>Technology</h3>
               <p>
-                Technology has the power to change the lives of the world and
-                individuals. I want to be a person who can always catch up with
-                the latest technology and respond to changes. I think it is the
-                mission of designers as well as engineers to promote innovation.
+                Technology has the power to change the lives of the world and individuals.
+                I want to be a person who can always catch up with the latest technology
+                and respond to changes. I think it is the mission of designers as well as
+                engineers to promote innovation.
               </p>
             </styled.ListItem>
 
@@ -173,16 +170,16 @@ export default function AboutContent() {
               initial="hidden"
               transition={{ duration: 1.6 }}
               variants={{
-                visible2: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 80 },
+                visible2: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 80 },
               }}
             >
               <h3>Story</h3>
               <p>
-                I love story-like content such as novels, movies. Stories can
-                get people's attention and make things easier to understand and
-                remember. I believe that if you can study every story pattern
-                and give your output a story, you will get a big return.
+                I love story-like content such as novels, movies. Stories can get people's
+                attention and make things easier to understand and remember. I believe
+                that if you can study every story pattern and give your output a story,
+                you will get a big return.
               </p>
             </styled.ListItem>
 
@@ -191,37 +188,35 @@ export default function AboutContent() {
               initial="hidden"
               transition={{ duration: 1.9 }}
               variants={{
-                visible2: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: 80 },
+                visible2: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 80 },
               }}
             >
               <h3>Design</h3>
               <p>
-                I think design is like a "magic wand". If a service or product
-                is magic to solve a problem, it is the role of design to act as
-                an intermediary for users to master it. I strive every day to
-                create a "magic wand" that matches the user.
+                I think design is like a "magic wand". If a service or product is magic to
+                solve a problem, it is the role of design to act as an intermediary for
+                users to master it. I strive every day to create a "magic wand" that
+                matches the user.
               </p>
             </styled.ListItem>
           </ul>
         </styled.Content>
       </styled.Passion>
-      <styled.Skills>
+      <styled.Skills ref={inViewRef3}>
         <styled.Indicator>
           <span>03</span>
         </styled.Indicator>
         <styled.Illustration>
-          <styled.Title>Skillset</styled.Title>
+          <styled.Title>Skills</styled.Title>
           <styled.Img
-            ref={inViewRef3}
             animate={controls}
             initial="hidden"
             transition={{ duration: 1.2 }}
             variants={{
-              visible: { opacity: 1, y: -50 },
+              visible3: { opacity: 1, y: -50 },
               hidden: { opacity: 0, y: 0 },
             }}
-            ref={ref}
           >
             <img
               src={`${
@@ -240,11 +235,18 @@ export default function AboutContent() {
                 <img src="/icons/html&css.svg" alt="html&css icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={90}
-                  pathColor={`21, 114, 182`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 95 : 0}`}
+                        pathColor={`21, 114, 182`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
+
                 <span>HTML&CSS</span>
               </div>
             </styled.Frame>
@@ -253,11 +255,17 @@ export default function AboutContent() {
                 <img src="/icons/javascript-icon.svg" alt="javascript icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={80}
-                  pathColor={`247, 223, 30`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 85 : 0}`}
+                        pathColor={`247, 223, 30`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>Javascript</span>
               </div>
             </styled.Frame>
@@ -266,11 +274,17 @@ export default function AboutContent() {
                 <img src="/icons/git-icon.svg" alt="git icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={85}
-                  pathColor={`000,000,000`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 80 : 0}`}
+                        pathColor={`000,000,000`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>GIT</span>
               </div>
             </styled.Frame>
@@ -281,11 +295,17 @@ export default function AboutContent() {
                 <img src="/icons/tailwind-icon.svg" alt="tailwindcss icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={85}
-                  pathColor={`68, 168, 179`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 85 : 0}`}
+                        pathColor={`68, 168, 179`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>Tailwind</span>
               </div>
             </styled.Frame>
@@ -294,11 +314,17 @@ export default function AboutContent() {
                 <img src="/icons/react-icon.svg" alt="react icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={65}
-                  pathColor={`0, 216, 255`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 65 : 0}`}
+                        pathColor={`0, 216, 255`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>React</span>
               </div>
             </styled.Frame>
@@ -307,11 +333,17 @@ export default function AboutContent() {
                 <img src="/icons/figma-icon.svg" alt="figma icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={85}
-                  pathColor={`162, 89, 255`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 80 : 0}`}
+                        pathColor={`162, 89, 255`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>Figma</span>
               </div>
             </styled.Frame>
@@ -322,11 +354,17 @@ export default function AboutContent() {
                 <img src="/icons/sass-icon.svg" alt="sass icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={75}
-                  pathColor={`205, 103, 253`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 75 : 0}`}
+                        pathColor={`205, 103, 253`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>SASS</span>
               </div>
             </styled.Frame>
@@ -335,27 +373,36 @@ export default function AboutContent() {
                 <img src="/icons/nextjs-icon.svg" alt="nextjs icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={70}
-                  pathColor={`000, 000, 000`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 70 : 0}`}
+                        pathColor={`000, 000, 000`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>NextJs</span>
               </div>
             </styled.Frame>
             <styled.Frame>
               <div className="heading">
-                <img
-                  src="/icons/styled-icon.svg"
-                  alt="styled-components icon"
-                />
+                <img src="/icons/styled-icon.svg" alt="styled-components icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={80}
-                  pathColor={`255, 206, 191`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 80 : 0}`}
+                        pathColor={`255, 206, 191`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>Styled Co.</span>
               </div>
             </styled.Frame>
@@ -366,11 +413,17 @@ export default function AboutContent() {
                 <img src="/icons/linux-icon.svg" alt="sass icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={75}
-                  pathColor={`38, 50, 56`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 75 : 0}`}
+                        pathColor={`38, 50, 56`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>Linux</span>
               </div>
             </styled.Frame>
@@ -379,27 +432,37 @@ export default function AboutContent() {
                 <img src="/icons/firebase-icon.svg" alt="nextjs icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={50}
-                  pathColor={`252, 202, 63`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 50 : 0}`}
+                        pathColor={`252, 202, 63`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
                 <span>Firebase</span>
               </div>
             </styled.Frame>
             <styled.Frame>
               <div className="heading">
-                <img
-                  src="/icons/mongodb-icon.svg"
-                  alt="styled-components icon"
-                />
+                <img src="/icons/mongodb-icon.svg" alt="styled-components icon" />
               </div>
               <div className="circle">
-                <ProgressBar
-                  valueStart={0}
-                  valueEnd={40}
-                  pathColor={`72, 165, 71`}
-                ></ProgressBar>
+                <VisibilitySensor>
+                  {({ isVisible }) => {
+                    return (
+                      <ProgressBar
+                        valueStart={0}
+                        valueEnd={`${isVisible ? 40 : ''}`}
+                        pathColor={`72, 165, 71`}
+                      ></ProgressBar>
+                    );
+                  }}
+                </VisibilitySensor>
+
                 <span>MongoDB</span>
               </div>
             </styled.Frame>
@@ -410,3 +473,4 @@ export default function AboutContent() {
     </styled.About>
   );
 }
+<VisibilitySensor>{({ isVisible }) => {}}</VisibilitySensor>;

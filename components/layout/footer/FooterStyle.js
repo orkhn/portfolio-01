@@ -39,7 +39,7 @@ export const ChatButton = styled.button`
     z-index: 5;
 
     path {
-      fill: ${({ theme }) => theme.bottomNavbarColor};
+      fill: ${({ theme }) => theme.bottomNav};
     }
   }
 

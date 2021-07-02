@@ -10,17 +10,10 @@ const Navbar = () => {
   const isHome = url === '/' ? true : false;
   const { width } = useViewport();
 
-  const projectUrl = () => {
-    if (isHome) return '/project';
-    else if (isHome) return '#';
-    else return '/';
-  };
-
   useEffect(() => {
     const toggleVisible = () => {
       const scrolled = document.documentElement.scrollTop;
-      console.log(document.documentElement.scrollTop);
-      if (scrolled > 30) {
+      if (scrolled > 50) {
         setVisible(false);
       }
       if (scrolled <= 0) {

@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const ThemeToggler = styled.div`
   .switch {
-    position: relative;
     display: inline-block;
+    position: relative;
     height: 3.5rem;
     width: 8rem;
     border-radius: 10em;
     transition: all 500ms ease-in-out;
-    background: #232320;
+    background: var(--title-color);
 
     @media (max-width: 37.5em) {
       height: 3rem;
@@ -24,12 +24,10 @@ export const ThemeToggler = styled.div`
     .slider {
       position: absolute;
       cursor: pointer;
-
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
-
       transition: 0.3s;
 
       &:before {
@@ -39,7 +37,7 @@ export const ThemeToggler = styled.div`
         width: 2.7rem;
         left: 0.6rem;
         bottom: 0.4rem;
-        background-color: #fff;
+        background-color: var(--white-color);
         border-radius: 50%;
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -51,19 +49,17 @@ export const ThemeToggler = styled.div`
         }
       }
       &:after {
-        position: absolute;
         content: '\u263E';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
         font-size: 3.2rem;
         height: 2.8rem;
         width: 2.8rem;
         right: 0.5rem;
         bottom: 0.2rem;
-        color: #fff;
-        display: flex;
-        align-content: center;
-        align-items: center;
-        justify-content: center;
-        /* overflow: hidden; */
+        color: var(--white-color);
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
         @media (max-width: 37.5em) {
@@ -94,7 +90,7 @@ export const ThemeToggler = styled.div`
       }
     }
     & input:checked + .slider {
-      background: #f36d18;
+      background: var(--orange-color);
       border-radius: 10em;
     }
   }

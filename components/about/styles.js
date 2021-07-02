@@ -2,80 +2,40 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const About = styled.section`
-  width: 100%;
-  margin-top: 14rem;
-  animation: fadeInUp 0.7s ease-in-out;
-
-  @media (max-width: 37.5em) {
-    width: 100%;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
 `;
-
 export const Intro = styled.div`
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(6, minmax(auto, 1fr));
-  height: 95vh;
-
-  h2 {
-    font-weight: 900;
-  }
+  padding-top: 12rem;
+  animation: fadeInUp 0.5s ease-in-out;
 
   @media (max-width: 37.5em) {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-top: -6.8rem;
+    padding-top: 9rem;
+    height: auto;
 
     img {
       width: 65%;
+      margin-bottom: 5rem;
     }
   }
 `;
 
 export const Passion = styled(Intro)`
-  padding-top: 3rem;
-
-  li {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    p {
-      padding-bottom: 5.5rem;
-    }
-  }
-
-  h2 {
-    margin-left: 3rem;
-  }
-
-  h3 {
-    margin-bottom: -1rem;
-    text-align: center;
-    font-size: 2.6rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.3rem;
-    color: ${({ theme }) => theme.secondary};
-  }
-
   @media (max-width: 37.5em) {
-    h2 {
-      margin: -3rem 0 0 0;
+    img {
+      margin-bottom:-3rem;
     }
-    h3 {
-      margin: -6rem 0 0.2rem 0;
-    }
-
-    p {
-      margin-bottom: 1.6rem;
     }
   }
 `;
 
 export const Skills = styled(Intro)`
-  height: 85vh;
   h2 {
     margin-bottom: 8rem;
   }
@@ -93,62 +53,14 @@ export const Skills = styled(Intro)`
   }
 
   @media (max-width: 37.5em) {
-    margin: 24rem 0 0 0;
-    height: 100vh;
-
+    padding-top: 5rem;
     .skill-area {
       padding-bottom: 10rem;
     }
-  }
-`;
-
-export const Frame = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 28%;
-  height: 92%;
-  padding: 0.3rem 1rem 1rem 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  border-radius: 10px;
-  background-color: ${({ theme }) => theme.progressbarColor};
-
-  .heading {
-    display: flex;
-    align-items: start;
-    justify-content: flex-start;
-    width: 100%;
-    height: 30%;
 
     img {
-      padding-right: 0;
-      width: 3rem;
-      height: 3rem;
+      margin: 0;
     }
-  }
-  .circle {
-    height: 62%;
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    span {
-      position: absolute;
-      top: 65%;
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 37.5em) {
-    height: 20rem;
-    margin: 1rem;
-    padding: 0.3rem 0.5rem 0.5rem 0.5rem;
-  }
-  @media (max-width: 28em) {
-    height: 13.5rem;
-    margin: 0.5rem;
   }
 `;
 
@@ -187,10 +99,6 @@ export const Indicator = styled(motion.div)`
 
 export const Illustration = styled(motion.div)`
   grid-column: 2 / span 2;
-
-  @media (max-width: 37.5em) {
-    margin-bottom: 4rem;
-  }
 `;
 
 export const Title = styled.h2`
@@ -202,15 +110,10 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.secondary};
   text-transform: uppercase;
 
-  &.titleNoAligned {
-    text-align: center;
-    padding: 2rem 0 0 0;
-  }
-
   @media (max-width: 37.5em) {
     width: 100%;
     padding: 0 0 1rem 0;
-    margin-top: -3rem;
+    margin-top: -2.8rem;
     text-align: center;
   }
 `;
@@ -247,25 +150,6 @@ export const Content = styled(motion.div)`
   }
 `;
 
-export const ListItem = styled(motion.li)``;
-
-export const Connection = styled(motion.div)`
-  .buttons {
-    display: flex;
-    gap: 2rem;
-
-    @media (max-width: 37.5em) {
-      justify-content: center;
-      gap: 1;
-      margin-top: -1rem;
-
-      div {
-        margin: 0;
-      }
-    }
-  }
-`;
-
 export const Button = styled(motion.div)`
   display: flex;
   color: ${({ theme }) => theme.secondary};
@@ -290,7 +174,7 @@ export const Button = styled(motion.div)`
     letter-spacing: 1px;
     display: flex;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
     position: relative;
 
     background: linear-gradient(currentColor 0 0) 0 100%,
@@ -305,6 +189,95 @@ export const Button = styled(motion.div)`
       --d: 100%;
       --p: 0%;
     }
+  }
+`;
+
+export const ListItem = styled(motion.li)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  :not(:last-child) {
+    padding-bottom: 3rem;
+  }
+
+  h3 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    color: ${({ theme }) => theme.secondary};
+  }
+
+  @media (max-width: 37.5em) {
+    padding-bottom: 1rem;
+  }
+`;
+
+export const Connection = styled(motion.div)`
+  .buttons {
+    display: flex;
+    gap: 2rem;
+
+    @media (max-width: 37.5em) {
+      justify-content: center;
+      gap: 1;
+      margin-top: -1rem;
+
+      div {
+        margin: 0;
+      }
+    }
+  }
+`;
+
+export const Frame = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  height: 92%;
+  padding: 0.3rem 1rem 1rem 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 10px;
+  background-color: ${({ theme }) => theme.skillCard};
+
+  .heading {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 30%;
+
+    img {
+      padding-right: 0;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  .circle {
+    height: 62%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      position: absolute;
+      top: 65%;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 37.5em) {
+    height: 20rem;
+    margin: 1rem;
+    padding: 0.3rem 0.5rem 0.5rem 0.5rem;
+  }
+  @media (max-width: 28em) {
+    height: 13.5rem;
+    margin: 0.5rem;
   }
 `;
 

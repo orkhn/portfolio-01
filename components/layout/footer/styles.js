@@ -5,14 +5,12 @@ export const ChatBot = styled.div`
   width: 35rem;
   height: 60rem;
   border-radius: 30px;
-  background: #fff;
+  background: var(--white-color);
   position: fixed;
   right: 5.5rem;
   bottom: 4.5rem;
   z-index: 10;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 5px 30px 0 rgba(0, 0, 0, 0.15),
-    0 3px 3px 0 rgba(0, 0, 0, 0.05);
-  font-family: 'Cormorant', Helvetica, Arial, sans-serif;
+  box-shadow: var(--box-Shadow-2);
   pointer-events: none;
   opacity: 0;
   transform: translate3d(0, 3rem, 0);
@@ -32,6 +30,7 @@ export const ChatBot = styled.div`
       transform: translateZ(0);
       pointer-events: auto;
     `}
+
   .agent,
   .user {
     padding: 0.7rem 1.2rem;
@@ -44,8 +43,9 @@ export const ChatBot = styled.div`
   .mw-93 {
     max-width: 90%;
   }
+
   .agent {
-    background: #fff;
+    background: var(--white-color);
     color: #222;
     border: 1px solid #c5ced6;
     border-radius: 0 20rem 10rem 10rem;
@@ -68,6 +68,7 @@ export const ChatBot = styled.div`
       :hover {
         background: #ffebd2;
       }
+
       :active {
         background: #ffdfb8;
         outline: 0;
@@ -152,10 +153,8 @@ export const ChatContent = styled.div`
 `;
 
 export const ChatAnswer = styled(motion.div)`
-  display: ${({ currentQuestion }) =>
-    currentQuestion === 0 ? 'none' : 'flex'};
-  pointer-events: ${({ currentQuestion }) =>
-    currentQuestion === 0 ? 'none' : 'auto'};
+  display: ${({ currentQuestion }) => (currentQuestion === 0 ? 'none' : 'flex')};
+  pointer-events: ${({ currentQuestion }) => (currentQuestion === 0 ? 'none' : 'auto')};
   flex-direction: column;
 `;
 
@@ -174,16 +173,13 @@ export const ChatQuestion = styled(motion.div)`
     cursor: pointer;
     margin-top: 1rem;
     :first-child {
-      display: ${({ currentQuestion }) =>
-        currentQuestion === 1 ? 'none' : 'initial'};
+      display: ${({ currentQuestion }) => (currentQuestion === 1 ? 'none' : 'initial')};
     }
     :nth-child(2) {
-      display: ${({ currentQuestion }) =>
-        currentQuestion === 2 ? 'none' : 'initial'};
+      display: ${({ currentQuestion }) => (currentQuestion === 2 ? 'none' : 'initial')};
     }
     :nth-child(3) {
-      display: ${({ currentQuestion }) =>
-        currentQuestion === 3 ? 'none' : 'initial'};
+      display: ${({ currentQuestion }) => (currentQuestion === 3 ? 'none' : 'initial')};
     }
     :hover {
       background: #ffebd2;

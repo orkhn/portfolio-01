@@ -19,9 +19,6 @@ const ProgressBar = ({ valueStart, valueEnd, pathColor, title }) => {
             value={value}
             text={`${roundedValue}%`}
             styles={{
-              // Customize the root svg element
-              root: {},
-
               // Customize the path
               path: {
                 // Path color

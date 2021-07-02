@@ -2,12 +2,13 @@ import styled, { css } from 'styled-components';
 import Link from 'next/link';
 
 export const Navbar = styled.nav`
-  padding-top: 3rem;
-  z-index: 2;
   width: 100%;
   position: fixed;
+  z-index: 2;
+  padding-top: 2rem;
   transition: opacity 1s;
   background-color: ${({ theme }) => theme.primary};
+
   ${({ isHome }) =>
     isHome &&
     css`
@@ -15,13 +16,10 @@ export const Navbar = styled.nav`
     `}
 
   @media (max-width: 37.5em) {
-    padding-top: 1.5rem;
-
     .about,
     .project,
     .contact {
       display: none;
-      visibility: hidden;
     }
   }
 `;
@@ -29,7 +27,6 @@ export const Navbar = styled.nav`
 export const NavList = styled.ul`
   display: flex;
   align-items: center;
-  list-style: none;
   width: 90%;
   margin: 0 auto;
 `;
@@ -41,11 +38,7 @@ export const LinkWrapper = styled.li`
     transform: translateX(-50%);
 
     @media (max-width: 37.5em) {
-      left: 9%;
-    }
-
-    a {
-      padding: 0;
+      left: 10%;
     }
   }
   &.github {
@@ -60,10 +53,10 @@ const StyledLink = ({ children, className, href }) => (
 );
 
 export const NavLink = styled(StyledLink)`
-  color: ${({ theme }) => theme.secondary};
-  font-size: 1.75rem;
   display: flex;
   align-items: center;
+  color: ${({ theme }) => theme.secondary};
+  font-size: 1.75rem;
   padding: 0.5rem 1.2rem;
 
   &.about,

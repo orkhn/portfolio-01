@@ -1,13 +1,12 @@
 import * as styled from './styles';
 
-import { useViewport } from 'hooks/useViewport';
 import { useContext } from 'react';
 
 import { ChatBotContext } from 'components/layout/Layout';
+import AnimateFlip from 'helpers/movingWords/AnimateFlip';
 
 function Hero() {
   const { theme } = useContext(ChatBotContext);
-  const { width } = useViewport();
 
   return (
     <styled.Hero>
@@ -16,18 +15,16 @@ function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <h1>Hi! I'm Orkhan.</h1>
-
-        <styled.movingParagraph>
-          <div>
-            <ul className="flip">
-              <li>A React Developer</li>
-              <li>Living In Baku, Azerbaijan</li>
-            </ul>
-          </div>
-        </styled.movingParagraph>
+        <styled.Heading>hi! i'm orkhn</styled.Heading>
+        <AnimateFlip
+          paragraphFirst={'A React Developer'}
+          paragraphSecond={'Living In Baku, Azerbaijan'}
+        ></AnimateFlip>
       </styled.Description>
       <styled.Img
+        variants={styled.descriptionVariants}
+        initial="hidden"
+        animate="visible"
         src={`${
           theme === 'light'
             ? '/images/illustrations/hero.svg'

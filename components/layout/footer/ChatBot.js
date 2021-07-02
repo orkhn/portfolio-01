@@ -40,8 +40,7 @@ export default function ChatBot({ setChatBotState, chatBotState }) {
       currentQuestion === 1 ? (
         <Delayed>
           <div className="agent" ref={contentRef}>
-            <p>Well hi there!</p>
-
+            <p>Well, hi there!</p>
             <p> I hope you've enjoyed browsing my website!</p>
           </div>
           <div className="agent">Can I help you with anything else?</div>
@@ -49,8 +48,7 @@ export default function ChatBot({ setChatBotState, chatBotState }) {
       ) : currentQuestion === 2 ? (
         <Delayed>
           <div className="agent mw-93" ref={contentRef}>
-            <p>📧 Here is my number:</p>
-
+            <p>Here is my number:</p>
             <p>
               <a
                 style={{ wordSpacing: '-10px', color: 'blue' }}
