@@ -473,4 +473,3 @@ export default function AboutContent() {
     </styled.About>
   );
 }
-<VisibilitySensor>{({ isVisible }) => {}}</VisibilitySensor>;

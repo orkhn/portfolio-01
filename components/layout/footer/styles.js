@@ -22,6 +22,10 @@ export const ChatBot = styled.div`
     top: 0;
     left: 0;
   }
+  @media (max-width: 80em) {
+    width: 25rem;
+    height: 80%;
+  }
 
   ${({ chatBotState }) =>
     chatBotState === 'open' &&

@@ -1,39 +1,36 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const About = styled.section`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
-`;
+export const About = styled.section``;
 export const Intro = styled.div`
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(6, minmax(auto, 1fr));
-  padding-top: 12rem;
   animation: fadeInUp 0.5s ease-in-out;
+  padding: 13rem 0 0rem;
+
+  @media (max-width: 80em) {
+    padding-top: 10rem;
+
+    @media (max-width: 56.25em) {
+      display: flex;
+      flex-direction: column;
+      padding-top: 12rem;
+
+      img {
+        width: 40%;
+        margin-bottom: 6.5rem;
+      }
+    }
+  }
 
   @media (max-width: 36.5em) {
     display: flex;
     flex-direction: column;
     padding-top: 9rem;
-    height: auto;
 
     img {
       width: 65%;
       margin-bottom: 5rem;
-    }
-  }
-
-  @media (max-width: 56.25em) {
-    display: flex;
-    flex-direction: column;
-    padding-top: 9rem;
-    height: auto;
-
-    img {
-      width: 40%;
-      margin-bottom: 6.5rem;
     }
   }
 `;
@@ -54,13 +51,10 @@ export const Skills = styled(Intro)`
   [class^='block-'] {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
   }
 
   @media (max-width: 37.5em) {
-    padding-top: 5rem;
-    margin: 2rem;
-
+    margin-top: 3rem;
     img {
       margin: 0;
     }
@@ -70,14 +64,10 @@ export const Skills = styled(Intro)`
 export const Indicator = styled(motion.div)`
   position: relative;
 
-  @media (max-width: 56.25em) {
-    width: 30%;
-  }
-
   span {
     color: #ff4d5a;
     font-size: clamp(2.2rem, 4.8vw, 2.6rem);
-    padding-left: 6.2rem;
+    padding-left: 6rem;
 
     ::before {
       content: '';
@@ -88,21 +78,16 @@ export const Indicator = styled(motion.div)`
       top: 2rem;
       left: 0;
     }
-
-    @media (max-width: 56.25em) {
-      padding-left: 3.3rem;
-
-      ::before {
-        top: 50%;
-        width: 3rem;
-      }
-    }
   }
 `;
 
 export const Illustration = styled(motion.div)`
   grid-column: 2 / span 2;
   padding-right: 3rem;
+
+  @media (max-width: 37.5em) {
+    padding-right: 0;
+  }
 `;
 
 export const Title = styled.h2`
@@ -132,6 +117,7 @@ export const Img = styled(motion.div)`
 export const Content = styled(motion.div)`
   grid-column: 4 / span 2;
   padding-left: 4rem;
+
   p {
     font-size: 1.4rem;
     padding: 2rem 0;
@@ -141,17 +127,17 @@ export const Content = styled(motion.div)`
     color: ${({ theme }) => theme.secondary};
   }
 
+  @media (max-width: 90.5em) {
+    grid-column: 4 / span 3;
+    padding-right: 4rem;
+  }
   @media (max-width: 37.5em) {
+    padding: 1rem;
     p {
-      padding: 0.7rem;
+      padding: 0.7rem 0;
       font-size: 1.3rem;
       word-spacing: -0.2rem;
     }
-  }
-
-  @media (max-width: 90.5em) {
-    grid-column: 4 / span 3;
-    padding-right: 6rem;
   }
 `;
 
@@ -240,14 +226,15 @@ export const Connection = styled(motion.div)`
 export const Frame = styled.div`
   display: flex;
   flex-direction: column;
+
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.skillCard};
 
   svg {
-    width: 100%;
+    width: 80%;
   }
 
   .heading {
@@ -275,8 +262,14 @@ export const Frame = styled.div`
     }
   }
 
-  @media (max-width: 112.5em) {
-    padding: 0.5rem;
+  @media (max-width: 85em) {
+    width: 80%;
+    height: 90%;
+  }
+
+  @media (max-width: 37.5em) {
+    width: 90%;
+    height: 95%;
   }
 `;
 

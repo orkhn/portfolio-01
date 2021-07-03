@@ -57,6 +57,8 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    height:100%;
+    width:100%;
     
 
     @media only screen and (min-width: 75em) {
@@ -68,6 +70,8 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.primary};
     font-family: var(--body-font);
     transition: all .5s linear;
+    height:100%;
+    width:100%;
   }
 
 
