@@ -2,11 +2,16 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const About = styled.section``;
+
 export const Intro = styled.div`
   display: grid;
   grid-template-columns: repeat(6, minmax(auto, 1fr));
   animation: fadeInUp 0.5s ease-in-out;
-  padding: 13rem 0 0rem;
+  padding: 11rem 0 0rem;
+
+  :first-child {
+    height: 100vh;
+  }
 
   @media (max-width: 80em) {
     padding-top: 10rem;
@@ -44,6 +49,7 @@ export const Passion = styled(Intro)`
 `;
 
 export const Skills = styled(Intro)`
+  padding-bottom: 4rem;
   h2 {
     margin-bottom: 8rem;
   }
@@ -75,8 +81,9 @@ export const Indicator = styled(motion.div)`
       height: 2px;
       background: ${({ theme }) => theme.secondary};
       position: absolute;
-      top: 2rem;
+      top: 1.6rem;
       left: 0;
+      text-align: center;
     }
   }
 `;
@@ -107,6 +114,8 @@ export const Title = styled.h2`
 `;
 
 export const Img = styled(motion.div)`
+  padding-top: 1.5rem;
+
   @media (max-width: 56.25em) {
     display: flex;
     align-items: center;
@@ -227,7 +236,7 @@ export const Frame = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin-bottom: 1rem;
+  margin: 1rem;
   padding: 0.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border-radius: 10px;
