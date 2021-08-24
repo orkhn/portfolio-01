@@ -1,6 +1,6 @@
 import * as styled from './navbarStyles';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useViewport } from 'hooks/useViewport';
 
 const Navbar = () => {
@@ -9,21 +9,6 @@ const Navbar = () => {
   const url = router.pathname;
   const isHome = url === '/' ? true : false;
   const { width } = useViewport();
-
-  useEffect(() => {
-    const toggleVisible = () => {
-      const scrolled = document.documentElement.scrollTop;
-      if (scrolled > 50) {
-        setVisible(false);
-      }
-      if (scrolled <= 0) {
-        setVisible(true);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisible);
-    return () => window.removeEventListener('scroll', toggleVisible);
-  }, []);
 
   return (
     <styled.Navbar
