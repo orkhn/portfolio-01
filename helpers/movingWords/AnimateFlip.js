@@ -22,7 +22,7 @@ const Container = styled.div`
     }
 
     li {
-      margin-bottom: 57px;
+      margin-bottom: 63px;
       text-align: start;
       padding-left: 0.3rem;
 
