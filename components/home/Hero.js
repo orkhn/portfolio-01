@@ -15,9 +15,14 @@ function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <styled.Heading>hi! i'm orkhn</styled.Heading>
+        <styled.Heading className={`${theme === 'dark' ? 'gradientColor' : ''}`}>
+          Hi. I’m Orkhn.
+        </styled.Heading>
+        <styled.Heading className={`${theme === 'dark' ? 'gradientColor' : ''}`}>
+          A Developer.
+        </styled.Heading>
         <AnimateFlip
-          paragraphFirst={'A React Developer'}
+          paragraphFirst={'Specialized in React'}
           paragraphSecond={'Living In Baku, Azerbaijan'}
         ></AnimateFlip>
       </styled.Description>

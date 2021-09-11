@@ -1,7 +1,7 @@
 /*FONT FOR Headings*/
 @font-face {
-  font-family: 'Cormorant';
-  src: url(/fonts/Cormorant.woff) format('woff');
+  font-family: 'Bogart';
+  src: url('/fonts/Bogart.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }

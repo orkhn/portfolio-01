@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle`
   
 
   /*========== Colors ==========*/
-  --primary-color: #f7f6f2;
+  --primary-color: #f1eee9;
   --primary-color-forDark: #0A192F;
   --secondary-color: #0A192F;
   --secondary-color-forDark: #64ffda;
@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
 
   /*========== Font and typography ==========*/
   --body-font: 'DejaVuSansMono', Arial, sans-serif;
-  --heading-font:'Cormorant', Arial, sans-serif;
+  --heading-font:'Bogart', Arial, sans-serif;
   
 
   /*========== Font weight ==========*/
@@ -59,11 +59,7 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     height:100%;
     width:100%;
-    
-
-    @media only screen and (min-width: 75em) {
-    font-size: 80.5%;
-    } 
+  
   }
 
   body {
@@ -72,12 +68,6 @@ export const GlobalStyles = createGlobalStyle`
     transition: all .5s linear;
     height:100%;
     width:100%;
-  }
-
-
-  img {
-  width: 100%;
-  object-fit: cover;
   }
 
   a {
@@ -89,7 +79,8 @@ export const GlobalStyles = createGlobalStyle`
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  h6 {
     font-family: var(--heading-font);
     font-weight: 900;
   }
