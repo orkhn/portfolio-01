@@ -26,7 +26,7 @@ export const Hero = styled.section`
   @media (max-width: 56.25em) {
     flex-direction: column;
     justify-content: space-between;
-    height: 78vh;
+    height: 70vh;
     padding: 4rem 1rem;
     background: ${({ theme }) => theme.heroMobile};
   }

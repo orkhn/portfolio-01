@@ -80,9 +80,9 @@ export const ThemeToggler = styled.div`
       bottom: 0.5rem;
 
       @media (max-width: 37.5em) {
-        transform: translateX(-3.2rem);
+        transform: translateX(-3.3rem);
         font-size: 2.3rem;
-        top: -0.3rem;
+        top: -0.5rem;
       }
     }
     & input:checked + .slider {
