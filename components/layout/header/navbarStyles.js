@@ -5,30 +5,28 @@ export const Navbar = styled.nav`
   width: 100%;
   position: fixed;
   z-index: 2;
-  padding-top: 2rem;
-  transition: opacity 1s;
+  padding: 3rem 0;
   background-color: ${({ theme }) => theme.primary};
 
-  ${({ isHome }) =>
-    isHome &&
-    css`
-      background-color: transparent;
-    `}
-
   @media (max-width: 37.5em) {
-    .about,
-    .project,
-    .contact {
-      display: none;
-    }
+    padding-top: 2rem;
   }
 `;
 
 export const NavList = styled.ul`
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
+
+  @media (max-width: 37.5em) {
+    width: 90%;
+    .about,
+    .project,
+    .contact {
+      display: none;
+    }
+  }
 `;
 
 export const LinkWrapper = styled.li`
@@ -56,8 +54,8 @@ export const NavLink = styled(StyledLink)`
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.secondary};
-  font-size: 1.75rem;
-  padding: 0.5rem 1.2rem;
+  font-size: 1.8rem;
+  padding: 0.5rem 1rem;
 
   &.about,
   &.project,

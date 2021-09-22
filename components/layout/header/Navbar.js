@@ -1,7 +1,5 @@
 import * as styled from './navbarStyles';
-
 import ThemeToggler from './ThemeToggler';
-
 import { useRouter } from 'next/router';
 
 const Navbar = ({ themeToggler, theme, setChatBotState }) => {
@@ -10,7 +8,7 @@ const Navbar = ({ themeToggler, theme, setChatBotState }) => {
   const isHome = url === '/' ? true : false;
 
   const projectUrl = () => {
-    if (isHome) return '/project';
+    if (isHome) return '/projects';
     else if (isHome) return '#';
     else return '/';
   };
@@ -18,16 +16,18 @@ const Navbar = ({ themeToggler, theme, setChatBotState }) => {
   return (
     <styled.Navbar isHome={isHome}>
       <styled.NavList isHome={isHome}>
-        <styled.LinkWrapper onClick={() => console.log('clicked')} className="project">
+        <styled.LinkWrapper className="project">
           <styled.NavLink href={projectUrl()} className="about">
             <span>{isHome ? 'Projects' : 'Home'}</span>
           </styled.NavLink>
         </styled.LinkWrapper>
+
         <styled.LinkWrapper>
           <styled.NavLink href="/about" className="about">
             <span>About</span>
           </styled.NavLink>
         </styled.LinkWrapper>
+
         <styled.LinkWrapper onClick={() => setChatBotState('open')}>
           <styled.NavLink href="#" className="contact">
             <span>Contact</span>
