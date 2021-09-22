@@ -1,285 +1,80 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const About = styled.section``;
-
-export const Intro = styled.div`
+export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, minmax(auto, 1fr));
-  animation: fadeInUp 0.5s ease-in-out;
-  padding: 11rem 0 0rem;
-
-  :first-child {
-    height: 100vh;
-  }
-
-  @media (max-width: 80em) {
-    padding-top: 10rem;
-
-    @media (max-width: 56.25em) {
-      display: flex;
-      flex-direction: column;
-      padding-top: 12rem;
-
-      img {
-        width: 40%;
-        margin-bottom: 6.5rem;
-      }
-    }
-  }
-
-  @media (max-width: 36.5em) {
-    display: flex;
-    flex-direction: column;
-    padding-top: 9rem;
-
-    img {
-      width: 65%;
-      margin-bottom: 5rem;
-    }
-  }
+  max-width: 98rem;
+  margin: 10rem auto;
+  grid-template-columns: 42.5rem 1fr 34.1rem;
+  grid-template-rows: auto auto 234px;
+  grid-template-areas:
+    'title info info'
+    'passion passion skills'
+    'contact contact skills';
+  grid-gap: 2rem;
 `;
 
-export const Passion = styled(Intro)`
-  @media (max-width: 56.25em) {
-    img {
-      margin-bottom: -3rem;
-    }
-  }
+const Card = styled.div`
+  background-color: #35283c;
+  border-radius: 2.5rem;
+  overflow: hidden;
+  box-shadow: var(--box-Shadow-3);
+  color: #fff;
 `;
 
-export const Skills = styled(Intro)`
-  padding-bottom: 4rem;
-  h2 {
-    margin-bottom: 8rem;
-  }
+export const Title = styled(Card)`
+  grid-area: title;
 
-  [class^='block-'] {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @media (max-width: 37.5em) {
-    margin-top: 3rem;
-    img {
-      margin: 0;
-    }
-  }
-`;
-
-export const Indicator = styled(motion.div)`
-  position: relative;
-
-  span {
-    color: #ff4d5a;
-    font-size: clamp(2.2rem, 4.8vw, 2.6rem);
-    padding-left: 6rem;
-
-    ::before {
-      content: '';
-      width: 4.8rem;
-      height: 2px;
-      background: ${({ theme }) => theme.secondary};
-      position: absolute;
-      top: 1.6rem;
-      left: 0;
-      text-align: center;
-    }
-  }
-`;
-
-export const Illustration = styled(motion.div)`
-  grid-column: 2 / span 2;
-  padding-right: 3rem;
-
-  @media (max-width: 37.5em) {
-    padding-right: 0;
-  }
-`;
-
-export const Title = styled.h2`
-  text-align: center;
-  word-spacing: 0.4rem;
-  font-size: clamp(2.1rem, 4.8vw, 2.8rem);
-
-  color: ${({ theme }) => theme.secondary};
-  text-transform: uppercase;
-
-  @media (max-width: 56.25em) {
-    width: 100%;
-    padding: 0 0 1rem 0;
-    margin-top: -2.8rem;
-    text-align: center;
-  }
-`;
-
-export const Img = styled(motion.div)`
-  padding-top: 1.5rem;
-
-  @media (max-width: 56.25em) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-`;
-
-export const Content = styled(motion.div)`
-  grid-column: 4 / span 2;
-  padding-left: 4rem;
-
-  p {
-    font-size: 1.4rem;
-    padding: 2rem 0;
-    text-align: justify;
-    word-spacing: -0.3rem;
-
-    color: ${({ theme }) => theme.secondary};
-  }
-
-  @media (max-width: 90.5em) {
-    grid-column: 4 / span 3;
-    padding-right: 4rem;
-  }
-  @media (max-width: 37.5em) {
-    padding: 1rem;
-    p {
-      padding: 0.7rem 0;
-      font-size: 1.3rem;
-      word-spacing: -0.2rem;
-    }
-  }
-`;
-
-export const Button = styled(motion.div)`
-  display: flex;
-  color: ${({ theme }) => theme.secondary};
-
-  &:nth-child(1) {
-    margin-left: auto;
-  }
-
-  svg {
-    width: 2rem;
-    margin-right: 0.7rem;
-  }
-
-  a {
-    background: ${({ theme }) => theme.aboutResume};
-    color: currentColor;
-    transition: all 0.2s ease-in-out;
-    padding: 1rem 1.8rem;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    position: relative;
-
-    background: linear-gradient(currentColor 0 0) 0 100%,
-      linear-gradient(currentColor 0 0) 0 100%,
-      linear-gradient(currentColor 0 0) 100% 100%,
-      linear-gradient(currentColor 0 0) 100% 100%;
-    background-size: var(--p, 50%) 2px, 2px var(--d, 0);
-    background-repeat: no-repeat;
-    transition: 0.5s;
-
-    :hover {
-      --d: 100%;
-      --p: 0%;
-    }
-  }
-`;
-
-export const ListItem = styled(motion.li)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 
-  :not(:last-child) {
-    padding-bottom: 3rem;
-  }
-
-  h3 {
-    font-size: 2.6rem;
+  div {
+    margin: 3rem 0 0 3rem;
+    font-size: 4rem;
+    line-height: 1.1;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.3rem;
-    color: ${({ theme }) => theme.secondary};
-  }
-
-  @media (max-width: 56.25em) {
-    padding-bottom: 1rem;
-  }
-`;
-
-export const Connection = styled(motion.div)`
-  .buttons {
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+  }
 
-    @media (max-width: 56.25em) {
-      justify-content: center;
-      gap: 1;
-      margin-top: -1rem;
-
-      div {
-        margin: 0;
-      }
-    }
+  img {
+    width: 100%;
+    height: 38rem;
   }
 `;
 
-export const Frame = styled.div`
+export const Info = styled(Card)`
+  grid-area: info;
   display: flex;
   flex-direction: column;
 
-  margin: 1rem;
-  padding: 0.5rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  border-radius: 10px;
-  background-color: ${({ theme }) => theme.skillCard};
-
-  svg {
-    width: 80%;
-  }
-
-  .heading {
+  h3 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 5rem 0 3rem 0;
     display: flex;
-    align-items: start;
-    justify-content: flex-start;
-    width: 100%;
-    height: 25%;
-
-    img {
-      width: 3rem;
-      height: 3rem;
-    }
-  }
-  .circle {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    span {
-      position: absolute;
-      top: 60%;
-      font-size: 1rem;
-    }
+    flex-direction: column;
   }
 
-  @media (max-width: 85em) {
-    width: 80%;
-    height: 90%;
+  p {
+    padding: 0 2rem 2rem;
+    font-size: 2rem;
+    line-height: 1.3;
+    text-align: justify;
   }
+`;
 
-  @media (max-width: 37.5em) {
-    width: 90%;
-    height: 95%;
-  }
+export const Passion = styled(Card)`
+  grid-area: passion;
+`;
+
+export const Skills = styled(Card)`
+  grid-area: skills;
+`;
+
+export const Contact = styled(Card)`
+  grid-area: contact;
 `;
 
 export const EmailIcon = () => {
