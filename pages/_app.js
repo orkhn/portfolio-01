@@ -1,9 +1,9 @@
-import 'styles/font.css';
-
-import Layout from 'components/layout/Layout';
-import { ViewportProvider } from 'hooks/useViewport';
-
 import Head from 'next/head';
+import { ViewportProvider } from 'hooks/useViewport';
+import Layout from 'components/layout/Layout';
+import { Toaster } from 'react-hot-toast';
+
+import 'styles/font.css';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -40,6 +40,7 @@ const MyApp = ({ Component, pageProps }) => {
       <ViewportProvider>
         <Layout>
           <Component {...pageProps} />
+          <Toaster />
         </Layout>
       </ViewportProvider>
     </>
