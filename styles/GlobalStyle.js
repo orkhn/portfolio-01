@@ -25,24 +25,12 @@ export const GlobalStyles = createGlobalStyle`
   /*========== Font and typography ==========*/
   --body-font: 'DejaVuSansMono', Arial, sans-serif;
   --heading-font:'Bogart', Arial, sans-serif;
-  
-
-  /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
-
-  /*========== Margins ==========*/
-  --mb-1: .5rem;
-  --mb-2: 1rem;
-  --mb-3: 1.5rem;
-  --mb-4: 2rem;
-  --mb-5: 2.5rem;
-  --mb-6: 3rem;
 
   /*========== Box Shadows ==========*/
   --box-Shadow-1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   --box-Shadow-2:  0 0 0 1px rgba(0, 0, 0, 0.05), 0 5px 30px 0 rgba(0, 0, 0, 0.15),
     0 3px 3px 0 rgba(0, 0, 0, 0.05);
+  --box-Shadow-3: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
   *,
@@ -92,5 +80,18 @@ export const GlobalStyles = createGlobalStyle`
   ::selection {
     background: var(--selection-background-color);
     color: var(--selection-text-color);
+  }
+
+  .gradientColor {
+    background: linear-gradient(
+      271deg,
+      #a0e9ff 30%,
+      #a162e8 50%,
+      #f093b0 70%,
+      #edca85 94%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `;
