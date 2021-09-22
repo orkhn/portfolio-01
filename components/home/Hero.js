@@ -22,7 +22,7 @@ function Hero() {
           A Developer.
         </styled.Heading>
         <AnimateFlip
-          paragraphFirst={'Specialized in React'}
+          paragraphFirst={'Specialized in ReactJS'}
           paragraphSecond={'Living In Baku, Azerbaijan'}
         ></AnimateFlip>
       </styled.Description>
