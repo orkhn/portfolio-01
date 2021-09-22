@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 export const Navbar = styled.nav`
   z-index: 2;
-  display: none;
   width: 92%;
   height: 6rem;
   padding: 1rem 2rem;
@@ -11,21 +10,15 @@ export const Navbar = styled.nav`
   transition: opacity 1s;
   background: var(--title-color);
   border-radius: 2rem;
-
-  bottom: 1.3rem;
+  bottom: 1.2rem;
   left: 50%;
   transform: translate(-50%);
-
-  @media (max-width: 37.5em) {
-    display: flex;
-  }
 `;
 
 export const NavList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  list-style: none;
   width: 90%;
   margin: 0 5rem 0 0;
 `;
@@ -39,8 +32,6 @@ const StyledLink = ({ children, className, href }) => (
 );
 
 export const NavLink = styled(StyledLink)`
-  color: ${({ theme }) => theme.secondary};
-  font-size: 1.75rem;
   display: flex;
   align-items: center;
   margin-right: 1rem;

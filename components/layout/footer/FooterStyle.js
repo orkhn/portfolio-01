@@ -14,7 +14,7 @@ export const ChatButton = styled.button`
   width: 5.5rem;
   height: 5.5rem;
   position: fixed;
-  right: 6rem;
+  right: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,12 +85,7 @@ export const ChatButton = styled.button`
 `;
 export const ChatBotIcon = ({ theme }) => {
   return (
-    <svg
-      width="52"
-      height="52"
-      viewBox="0 0 52 52"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

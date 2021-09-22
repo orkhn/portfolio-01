@@ -1,14 +1,14 @@
 import * as styled from './navbarStyles';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 import { useViewport } from 'hooks/useViewport';
+import { useNavVisible } from 'hooks/useNavVisible';
 
 const Navbar = () => {
-  const [visible, setVisible] = useState(true);
   const router = useRouter();
   const url = router.pathname;
   const isHome = url === '/' ? true : false;
   const { width } = useViewport();
+  const visible = useNavVisible();
 
   return (
     <styled.Navbar
@@ -22,7 +22,7 @@ const Navbar = () => {
           </styled.NavLink>
         </styled.LinkWrapper>
         <styled.LinkWrapper>
-          <styled.NavLink href="/project" className="project">
+          <styled.NavLink href="/projects" className="project">
             <styled.ProjectsIcon />
           </styled.NavLink>
         </styled.LinkWrapper>
